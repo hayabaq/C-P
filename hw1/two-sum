@@ -1,0 +1,15 @@
+var twoSum = function(numbers, target) {
+    let arr=numbers ;
+    let first=1
+    let second=1
+    for (let i=0;i<arr.length;++i){first=i+1
+        for(let j=0;j<=i;++j){
+            second=j+1
+            if(i==j){continue}
+            else if(arr[i]+arr[j]==target){console.log(first+" "+second)
+   return [second,first]                                       
+                                          }
+           
+        }
+    }
+};
