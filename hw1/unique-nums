@@ -1,0 +1,12 @@
+var countNumbersWithUniqueDigits = function(n) {
+    let res =10
+    let nums=9
+    let unique =9
+    if(n==0){return 1}
+    while(n-- > 1 && nums>0){
+          unique*=nums
+        res+=unique
+        nums--
+          }
+          return res
+          };
