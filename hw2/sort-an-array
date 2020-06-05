@@ -1,0 +1,16 @@
+var sortArray = function(nums) {
+let n=nums.length
+for(let i=1;i<n;i++){
+    let j=i-1
+    let pos
+    let current=nums[i]
+    for(j;j>=0;j--){
+      if(current<nums[j]){
+        nums[j+1]=nums[j]
+        pos=j
+      }
+    }
+    nums[pos]=current
+}
+return nums
+};
