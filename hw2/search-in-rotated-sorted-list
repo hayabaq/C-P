@@ -1,5 +1,4 @@
 var search = function(nums, target) {
-    //find the pivot point 
     if(nums.length==0){return -1}
     if(nums.length==1){if(nums[0]==target){return 0} return -1}
     let index=pivot(nums)
