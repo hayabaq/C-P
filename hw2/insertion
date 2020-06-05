@@ -1,0 +1,18 @@
+function insertionSort1(n, arr) {
+for(let i=1;i<n;i++){
+    let j=i-1
+    let pos
+    let current=arr[i]
+    for(j;j>=0;j--){
+      if(current<arr[j]){
+        arr[j+1]=arr[j]
+        console.log(arr.join(" "))
+        pos=j
+      }
+    }
+    arr[pos]=current
+  //  console.log(arr.join(" "))
+}
+console.log(arr.join(" "))
+
+}
