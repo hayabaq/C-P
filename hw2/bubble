@@ -1,0 +1,17 @@
+function countSwaps(a) {
+let numSwaps=0
+let len=a.length
+for(let i=0;i<len;i++){
+    for(let j=0;j<len-1;j++){
+        if(a[j]>a[j+1]){
+            let tmp=a[j]
+            a[j]=a[j+1]
+            a[j+1]=tmp
+            numSwaps++
+        }
+    }
+}
+console.log('Array is sorted in '+numSwaps+' swaps.')
+console.log('First Element: '+a[0])
+console.log('Last Element: '+a[len-1])
+}
