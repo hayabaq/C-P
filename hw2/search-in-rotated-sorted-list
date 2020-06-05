@@ -1,4 +1,5 @@
 var search = function(nums, target) {
+    //find the pivot point 
     if(nums.length==0){return -1}
     if(nums.length==1){if(nums[0]==target){return 0} return -1}
     let index=pivot(nums)
@@ -9,7 +10,7 @@ var search = function(nums, target) {
     else if(nums[index-1]>target&&target>nums[0]){
        return binarySearch(nums,target,0,index-1)
     }
-    return binarySearch(nums,target,index,nums.length-1)
+    return binarySearch(nums,target,index,nums.length)
 };
 
 function pivot(nums){
@@ -18,7 +19,11 @@ function pivot(nums){
     let med=0
     while(length>=first){
         med=Math.floor((first+(length))/2)
-        if (nums[med]>nums[med-1]&&nums[med]>nums[med+1]){
+     //   console.log(med)
+        if(med==0){
+            return med
+        }
+        else if (nums[med]>nums[med-1]&&nums[med]>nums[med+1]){
             return med-1
         } else if(nums[med]<nums[med+1]){
             length=med-1
