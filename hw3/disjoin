@@ -1,0 +1,18 @@
+var partitionDisjoint = function(A) {
+    let arr=[]
+    let min = A[A.length-1]
+    let len=A.length-1
+    arr[0]=A[0]
+    for(let i=1;i<A.length;i++){
+   // console.log(A[i]+" "+arr[i-1]) 
+     arr[i]=Math.max(A[i],arr[i-1])
+               }
+  //  console.log(arr)
+    for(let i=A.length-1;i>=0;i--){
+       min=Math.min(A[i],min)
+        if(min>=arr[i-1]){
+            len=i
+        }
+    }
+    return len
+};
