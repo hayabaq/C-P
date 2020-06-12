@@ -1,0 +1,13 @@
+var sortColors = function(nums) {
+    for(let i =0 ; i<nums.length;i++){
+        for(let j=0;j<nums.length;j++){
+            if(i==j){
+                continue
+            }
+            if(nums[i]<nums[j]){
+                let tmp=nums[i]
+                nums[i]=nums[j]
+                nums[j]=tmp
+            }
+        }
+    }
