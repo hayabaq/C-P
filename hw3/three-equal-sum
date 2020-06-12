@@ -1,0 +1,26 @@
+var canThreePartsEqualSum = function(A) {
+     let total=0
+     for(let i=0;i<A.length;i++){
+         total+=A[i]
+     }
+  //   console.log(total)
+   if(total%3!=0){
+       return false
+   }
+       let totalSum=total/3
+       let counter=0
+       let currentSum=0
+            for(let i=0;i<A.length;i++){
+            currentSum+=A[i]   
+                if(currentSum==totalSum){
+                    counter++
+                    currentSum=0
+                }
+            }
+ //   console.log(counter)
+       if(counter>=3){
+           return true 
+       }
+       return false
+   
+};
