@@ -1,0 +1,26 @@
+var singleNumber = function(nums) {
+    let i=0,j=1,freq=1
+    //,arr=[],indx=0
+    if(nums.length==1){
+        return nums[0]
+    }
+    while(i<nums.length){
+        // console.log(i+' '+j)
+        if(nums[i]===nums[j]&&i!=j){
+            freq++
+        }
+        if(j===nums.length-1){
+           // arr[indx]=[nums[i],freq]
+            if(freq===1){
+                return nums[i]
+            }
+           // indx++
+            i++
+            j=0
+            freq=1
+           continue
+        }
+        j++
+    }
+
+};
