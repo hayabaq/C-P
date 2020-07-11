@@ -1,0 +1,15 @@
+var subsets = function(nums) {
+   let res=[] , sub=[]
+   let len=nums.length 
+   let x=Math.pow(2,len)
+   for(let i=0;i<x;i++){
+       for(let j=0;j<len;j++){
+           if(((1<<j)&i)>0){
+               sub.push(nums[j])
+           }
+       }
+       res.push(sub)
+       sub=[]
+   }
+    return res
+};
