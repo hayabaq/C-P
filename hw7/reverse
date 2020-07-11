@@ -1,0 +1,10 @@
+var reverseList = function(head) {
+ if(head===null){return null}
+    let tail=null,res
+    while(head){
+        res=new ListNode(head.val,tail)
+        tail=res
+        head=head.next
+    }
+    return res
+};
