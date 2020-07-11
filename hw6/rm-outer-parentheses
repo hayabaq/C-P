@@ -1,0 +1,21 @@
+var removeOuterParentheses = function(s) {
+    let len =s.length, res="",count=-1
+    for(let i=0;i<len;i++){
+         
+        if(s[i]==="("){
+           if(count>=0){
+               res+=s[i]
+           }
+            count++
+        }
+        if(s[i]===")"){
+            if(count>0){
+                res+=s[i]
+            }
+            count--
+        }
+   //     console.log(count)
+        
+    }
+    return res
+};
