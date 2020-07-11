@@ -1,0 +1,13 @@
+var hasAlternatingBits = function(n) {
+    let pre =n%2
+    n>>=1
+    while(n>0){
+        let current = n%2
+        if(pre===current){
+            return false
+        }
+        pre = current 
+        n>>=1
+    }
+    return true
+};
