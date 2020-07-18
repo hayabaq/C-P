@@ -1,0 +1,21 @@
+var removeNthFromEnd = function(head, n) {
+    let dummy =new ListNode()
+    dummy.next=head
+    let first =dummy
+    let sec =dummy
+ /*   if(first.next===null){
+        first =null
+        return first
+    }*/
+    
+    for(let i=0;i<n;i++){
+        first =first.next
+    } 
+    while(first.next!=null){
+        first=first.next
+        sec=sec.next
+    }
+ //   console.log(sec)
+    sec.next=sec.next.next
+    return dummy.next
+};
