@@ -1,0 +1,17 @@
+//https://leetcode.com/problems/middle-of-the-linked-list/
+var middleNode = function(head) {
+    if(head.next===null) return head
+    let dummy=new ListNode(0)
+    dummy.next=head
+    let fast=dummy
+    let slow=dummy
+
+    while(fast!=null&&fast.next!=null){
+        slow=slow.next
+        fast=fast.next.next
+    }
+    if(fast===null){
+        return slow
+    }
+    return slow.next
+};
