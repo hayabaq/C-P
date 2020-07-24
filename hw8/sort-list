@@ -1,0 +1,40 @@
+//https://leetcode.com/problems/sort-list/
+
+var sortList = function sorting(head) {
+    if(head===null|| head.next===null){
+        return head
+    }
+    let mid = null
+    let fast = head,slow = head
+    while(fast&&fast.next!=null){
+        mid=slow
+        fast=fast.next.next
+        slow=slow.next
+    }
+    mid.next=null
+    let first = sorting(head)
+    let sec = sorting(slow)
+    return merge(first,sec)
+};
+function merge(first,sec) {
+    let res = new ListNode(0)
+    let ref= res
+    while(first&&sec){
+        if(first.val<sec.val){
+            ref.next=first
+            first=first.next
+        }else{
+            ref.next=sec
+            sec=sec.next
+        }
+        ref=ref.next
+    }
+    if(first){
+        ref.next=first
+    }
+    if(sec){
+        ref.next=sec
+    }
+    return res.next
+    
+}
