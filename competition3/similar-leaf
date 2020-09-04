@@ -1,0 +1,23 @@
+//https://leetcode.com/problems/leaf-similar-trees
+
+var leafSimilar = function(root1, root2) {
+    let ans=[],ans2=[]
+    //return similar(root1)//===similar(root2)
+    first(root1,ans)
+    first(root2,ans2)
+    console.log(ans+"  "+ans2)
+    return _.isEqual(ans,ans2)
+
+   
+};
+    function first(root,ans){
+        if(root){
+           first(root.left,ans)
+            if(root.right===null&&root.left===null){
+            ans.push(root.val)
+            }
+            first(root.right,ans)
+        }
+        return root 
+        
+}
