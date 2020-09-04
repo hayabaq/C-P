@@ -1,0 +1,11 @@
+//just to save the code for the next try 
+// only works for single letters :)
+
+var titleToNumber = function(s) {
+  let ans=0,max = s.charCodeAt()
+//  console.log(max)
+    for(let i=65;i<=max;i++){
+      ans++  
+    }
+    return ans
+};
