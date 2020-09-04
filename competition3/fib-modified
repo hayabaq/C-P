@@ -1,0 +1,9 @@
+# https://www.hackerrank.com/challenges/fibonacci-modified/problem
+
+def fibonacciModified(t1, t2, n):
+    ans=[]
+    ans.append(t1)
+    ans.append(t2)
+    for i in range(2,n):
+        ans.append(ans[i-2]+(ans[i-1]**2))
+    return ans[n-1]
